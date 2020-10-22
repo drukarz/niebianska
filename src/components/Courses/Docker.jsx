@@ -3,16 +3,15 @@ import React from 'react'
 const Docker = () =>{
 
     return(
-        <div>
+        <div style={{marginLeft: '20%'}}>
             <h2>Docker</h2>
-            <br/>
             <h3>Program</h3>
             <ul>
                 <li>wprowadzenie do konteneryzacji : Docker, instalacja, CLI</li>
                 <li>praca z kontenerami i obrazami : CLI, operacje na kontenerach i obrazach, praca z rejestrami, Dockerfile</li>
                 <li>konteneryzacja własnej aplikacji</li>
                 <li>komponowanie złożonych środowisk : Docker Compose</li>
-                <li>klaster : Docker Swarm, zarz</li>
+                <li>klaster : Docker Swarm, zarządzanie, Portainer.io</li>
             </ul>
             <h3>Cena i zakres</h3>
             Cena kursu : 1200 netto (przy 6 osobach) obejmuje :
@@ -28,15 +27,3 @@ const Docker = () =>{
 }
 
 export default Docker;
-
-
-
-    <AccordionTab header="Konteneryzacja własnej aplikacji" style={{'fontSize': '2.5em'}}/>
-    <AccordionTab header="Komponowanie złożonych środowisk - Docker Compose" style={{'fontSize': '2.5em'}}/>
-
-    <AccordionTab header="Klaster" style={{'fontSize': '2.5em'}}>
-        {
-            toList(['Docker Swarm', 'zarządzanie', 'Portainer.io'])
-        }
-    </AccordionTab>
-</Accordion>
