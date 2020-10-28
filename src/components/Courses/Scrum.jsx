@@ -1,9 +1,12 @@
 import React from 'react'
+import {isMobile} from "react-device-detect";
 
 const Scrum = () =>{
 
+    let className = !isMobile ? "common-font-15 course" : "common-font-15 course-mobile";
+
     return(
-        <div style={{marginLeft: '20%'}}>
+        <div className={className}>
             <h2>Scrum</h2>
             <h3>Program</h3>
             <ul>
@@ -14,13 +17,13 @@ const Scrum = () =>{
                 <li>Scrum : zdarzenia, role, artefakty</li>
                 <li>Warsztat pracy SM</li>
                 <ul>
-                    <li>monitorowanie przebiegu prac (metryki)</li>
-                    <li>rozwiązywanie problemów</li>
-                    <li>pomysły na retrospekcje</li>
-                    <li>planowanie w Agile</li>
-                    <li>praca z zespołem</li>
-                    <li>cechy zespołu developerów, jak je rozwijać ?</li>
-                    <li>cechy Scrum Mastera</li>
+                    - monitorowanie przebiegu prac (metryki)<br/>
+                    - rozwiązywanie problemów<br/>
+                    - pomysły na retrospekcje<br/>
+                    - planowanie w Agile<br/>
+                    - praca z zespołem<br/>
+                    - cechy zespołu developerów, jak je rozwijać ?<br/>
+                    - cechy Scrum Mastera<br/>
                 </ul>
             </ul>
             <h3>Cena i zakres</h3>

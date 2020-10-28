@@ -1,26 +1,26 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import codeImage from '../assets/images/code.png'
-import {Line} from 'react-lineto';
+import {usePageTitle} from "../hooks/usePageTitle";
+import {isMobile} from "react-device-detect";
 
 const AboutUs = () => {
 
-    const [width, setWidth] = useState(window.innerWidth);
-    const updateDimensions = () => {
-        setWidth(window.innerWidth);
+
+    let pageTitle = usePageTitle("O NAS");
+    let className = "about-text common-font-15";
+
+    if(isMobile) {
+        pageTitle = <div style={{textAlign: "center"}}>O NAS</div>;
+        className = "about-text-mobile common-font-15";
     }
-    useEffect(() => {
-        window.addEventListener("resize", updateDimensions);
-        return () => window.removeEventListener("resize", updateDimensions);
-    }, []);
 
     return(
         <div>
             <br/>
-            <Line x0={width * 0.2} y0={110} x1={width - width * 0.2} y1={110} borderColor='black'/>
-            <h1 className="page-header">O NAS</h1>
-            <Line x0={width * 0.2} y0={160} x1={width - width * 0.2} y1={160} borderColor='black'/>
+            {pageTitle}
             <br/>
-            <div className={"about-text"}>
+            <br/>
+            <div className={className}>
                 Jesteśmy grupą ludzi, którzy cenią sobie dobrą atmosferę i miłe otoczenie.
                 <br/>
                 <br/>
@@ -36,8 +36,8 @@ const AboutUs = () => {
                 Nieprzypadkowo tutaj, blisko natury w "tak pięknych okolicznościach przyrody".
                 <br/>
                 <br/>
-                <div className="list-turn-to">
-                    zwracamy się do :
+                <div className="common-font-15 list-turn-to">
+                    Zwracamy się do :
                     <ul>
                         <li>programistów</li>
                         <li>scrum masterów</li>

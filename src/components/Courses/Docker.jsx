@@ -1,9 +1,12 @@
 import React from 'react'
+import {isMobile} from "react-device-detect";
 
 const Docker = () =>{
 
+    let className = !isMobile ? "common-font-15 course" : "common-font-15 course-mobile";
+
     return(
-        <div style={{marginLeft: '20%'}}>
+        <div className={className}>
             <h2>Docker</h2>
             <h3>Program</h3>
             <ul>

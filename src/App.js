@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import Home from "./components/Home";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
@@ -20,14 +20,29 @@ import Spring from "./components/Courses/Spring";
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import {isMobile} from "react-device-detect";
 function App() {
 
+    const [isLoading, setLoading] = useState(true);
 
-    let content = <div>Aplikacja w budowie dla wersji mobilnej</div>
+    function fakeRequest() {
+        return new Promise(resolve => setTimeout(() => resolve(), 1000));
+    }
 
-    if(!isMobile) {
-        content = <div className="App">
+    useEffect(() => {
+        fakeRequest().then(() => {
+            const el = document.querySelector(".loader-container");
+            if (el) {
+                el.remove();
+                setLoading(!isLoading);
+            }
+        });
+    }, []);
+
+    if (isLoading) {
+        return null;
+    }
+
+    let content = <div className="App">
             <Router>
                 <Nav/>
                 <Switch>
@@ -49,7 +64,7 @@ function App() {
                 </Switch>
             </Router>
         </div>
-    }
+
 
     return content;
 }

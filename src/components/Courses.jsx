@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState} from 'react'
 import ansible from '../assets/images/courses/ANSIBLE.png'
 import ansible_h from '../assets/images/courses/ANSIBLE_mouse over.png'
 import docker from '../assets/images/courses/DOCKER.png'
@@ -15,9 +15,10 @@ import scrum from '../assets/images/courses/SCRUM.png'
 import scrum_h from '../assets/images/courses/SCRUM_mouse over.png'
 import spring from '../assets/images/courses/SPRING.png'
 import spring_h from '../assets/images/courses/SPRING_mouse over.png'
-import {Line} from 'react-lineto';
 import {Link} from "react-router-dom";
 import {useHistory} from "react-router-dom";
+import {usePageTitle} from "../hooks/usePageTitle";
+import {isMobile} from "react-device-detect";
 
 const Courses = ()=> {
 
@@ -31,28 +32,20 @@ const Courses = ()=> {
     const [scrumImage, setScrumImage] = useState(scrum);
     const [springImage, setSpringImage] = useState(spring);
 
-    const [width, setWidth]   = useState(window.innerWidth);
-
     let history = useHistory();
 
-    const updateDimensions = () => {
-        setWidth(window.innerWidth);
-    }
-    useEffect(() => {
-        window.addEventListener("resize", updateDimensions);
-        return () => window.removeEventListener("resize", updateDimensions);
-    }, []);
+    let pageTitle = usePageTitle("KURSY");
 
+    if(isMobile) {
+        pageTitle = <div style={{textAlign: "center"}}>KURSY</div>;
+     }
 
     return(
 
             <div>
                 <br/>
-                <div>
-                    <Line x0={width * 0.2 } y0={110} x1={width - width * 0.2} y1={110} borderColor='black' />
-                </div>
-                <h1 className="page-header">KURSY</h1>
-                <Line x0={width * 0.2 } y0={160} x1={width - width * 0.2} y1={160} borderColor='black' />
+                {pageTitle}
+                <br/>
                 <br/>
                 <p style={{ textAlign: 'center'}}>
                     <img src={ansibleImage} onMouseOver={() => setAnsibleImage(ansible_h)}

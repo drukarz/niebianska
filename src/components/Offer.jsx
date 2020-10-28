@@ -1,48 +1,24 @@
-import React, {useEffect, useState} from 'react'
-import {Line} from 'react-lineto';
+import React from 'react'
+import {usePageTitle} from "../hooks/usePageTitle";
+import {isMobile} from "react-device-detect";
 
 export default function Offer(){
 
-    const [width, setWidth] = useState(window.innerWidth);
-    const updateDimensions = () => {
-        setWidth(window.innerWidth);
-    }
-    useEffect(() => {
-        window.addEventListener("resize", updateDimensions);
-        return () => window.removeEventListener("resize", updateDimensions);
-    }, []);
+    let pageTitle = usePageTitle("OFERTA");
+    let className = "offer-text common-font-15";
 
-
-    const textStyle = {
-
-        columnCount: "2",
-        columnGap: "100px",
-        marginLeft: "25%",
-        marginRight: "25%",
-        textAlign: "justify",
-        fontSize: "15px",
-        height: "50%"
-    }
-
-    const mobileTextStyle = {
-
-        columnCount: "1",
-        columnGap: "10px",
-        marginLeft: "25%",
-        marginRight: "25%",
-        textAlign: "justify",
-        fontSize: "10px",
-        height: "50%"
+    if(isMobile) {
+        pageTitle = <div style={{textAlign: "center"}}>OFERTA</div>;
+        className = "offer-text-mobile common-font-15";
     }
 
     return(
         <div>
             <br/>
-            <Line x0={width * 0.2} y0={110} x1={width - width * 0.2} y1={110} borderColor='black'/>
-            <h1 className="page-header">OFERTA</h1>
-            <Line x0={width * 0.2} y0={160} x1={width - width * 0.2} y1={160} borderColor='black'/>
+            {pageTitle}
             <br/>
-            <div style={textStyle}>
+            <br/>
+            <div className={className}>
                 Jeśli jesteś osobą związaną z branżą IT, bądź masz takie aspiracje to byc może zainteresuje Cię nasza oferta.
                 <br/>
                 <br/>

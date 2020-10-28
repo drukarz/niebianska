@@ -1,31 +1,29 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 
 import viewImage from '../assets/images/gallery/view.jpg'
 import codeImage from '../assets/images/gallery/code.jpg'
 import mountainsImage from '../assets/images/gallery/mountains.jpg'
 import wineImage from '../assets/images/gallery/wine.jpg'
 import cloudsImage from '../assets/images/gallery/clouds.jpg'
-import {Line} from 'react-lineto';
+import {usePageTitle} from "../hooks/usePageTitle";
+import {isMobile} from "react-device-detect";
 
 const Gallery = () => {
 
-    const [width, setWidth] = useState(window.innerWidth);
-    const updateDimensions = () => {
-        setWidth(window.innerWidth);
+    let pageTitle = usePageTitle("GALERIA");
+    let className = "about-text common-font-15";
+
+    if(isMobile) {
+        pageTitle = <div style={{textAlign: "center"}}>GALERIA</div>;
+        className = "about-text-mobile common-font-15";
     }
-    useEffect(() => {
-        window.addEventListener("resize", updateDimensions);
-        return () => window.removeEventListener("resize", updateDimensions);
-    }, []);
 
     return (
         <div>
             <br/>
-            <Line x0={width * 0.2} y0={110} x1={width - width * 0.2} y1={110} borderColor='black'/>
-            <h1 className="page-header">GALERIA</h1>
-            <Line x0={width * 0.2} y0={160} x1={width - width * 0.2} y1={160} borderColor='black'/>
+            {pageTitle}
             <br/>
-            <div className={"about-text"}>
+            <div className={className}>
                 <b>NIEBIAŃSKA SZKOŁA PROGRAMISTÓW</b> mieści się w pencjonacie Bliżej Nieba
                 <br/>
                 w miejscowści Wola Skrzydlańska.

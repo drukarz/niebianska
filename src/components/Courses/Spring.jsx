@@ -1,48 +1,51 @@
 import React from 'react'
+import {isMobile} from "react-device-detect";
 
 const Spring = () =>{
 
+    let className = !isMobile ? "common-font-15 course" : "common-font-15 course-mobile";
+
     return(
-        <div style={{marginLeft: '20%'}}>
+        <div className={className}>
             <h2>Spring microservices</h2>
             <h3>Program</h3>
             <ul>
                 <li>wprowadzenie do architektury</li>
                 <ul>
-                    <li>porównanie stylów programowania: monolith, modulith, microservices</li>
-                    <li>wady i zalety mikroserwisów</li>
-                    <li>język wzorców w architekturze mikroserwisów</li>
+                    - porównanie stylów programowania: monolith, modulith, microservices<br/>
+                    - wady i zalety mikroserwisów<br/>
+                    - język wzorców w architekturze mikroserwisów<br/>
                 </ul>
                 <li>dekompozycja od monolitu to mikroserwisów</li>
                 <li>architektura bazy danych</li>
                 <ul>
-                    <li>wspólna baza danych</li>
-                    <li>baza danych per mikroserwis</li>
+                    - wspólna baza danych<br/>
+                    - baza danych per mikroserwis<br/>
                 </ul>
                 <li>spójność danych</li>
                 <ul>
-                    <li>agregaty</li>
-                    <li>zdarzenia domenow</li>
-                    <li>wzorzec Sagi</li>
-                    <li>event sourcing</li>
+                    - agregaty<br/>
+                    - zdarzenia domenow<br/>
+                    - wzorzec Sagi<br/>
+                    - event sourcing<br/>
                 </ul>
                 <li>komunikacja między mikroserwisami</li>
                 <ul>
-                    <li>REST</li>
-                    <li>circuit breaker</li>
-                    <li>service discovery</li>
-                    <li>messaging</li>
+                    - REST<br/>
+                    - circuit breaker<br/>
+                    - service discovery<br/>
+                    - messaging<br/>
                 </ul>
                 <li>pobieranie danych w architekturze mikroserwisów</li>
                 <ul>
-                    <li>API gateway i API composition</li>
-                    <li>CQRS</li>
+                    - API gateway i API composition<br/>
+                    - CQRS<br/>
                 </ul>
                 <li>scentralizowana konfikuracja mikroserwisów</li>
                 <li>monitoring mikroserwisów</li>
                 <ul>
-                    <li>healthcheck i monitoring</li>
-                    <li>zbieranie logów</li>
+                    - healthcheck i monitoring<br/>
+                    - zbieranie logów<br/>
                 </ul>
                 <li>instalacja i uruchomienie systemu opartego o mikroserwisy</li>
             </ul>

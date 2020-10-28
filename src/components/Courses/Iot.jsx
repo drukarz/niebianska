@@ -1,54 +1,57 @@
 import React from 'react'
+import {isMobile} from "react-device-detect";
 
 const Iot = () =>{
 
+    let className = !isMobile ? "common-font-15 course" : "common-font-15 course-mobile";
+
     return(
-        <div style={{marginLeft: '20%'}}>
+        <div className={className}>
             <h2>IoT</h2>
             <h3>Program</h3>
             <ul>
                 <li>wprowadzenie i historia</li>
                 <ul>
-                    <li>co to IoT</li>
-                    <li>przykłady istniejących systemów</li>
-                    <li>ewolucja systemów komputerowych, droga od "urządzeń zbierających dane i kontrolujących maszyny" do współczesnego IoT</li>
-                    <li>dlaczego IOT to przyszłość automatyzacji?</li>
+                    - co to jest IoT <br/>
+                    - przykłady istniejących systemów <br/>
+                    - ewolucja systemów komputerowych, droga od "urządzeń zbierających dane i kontrolujących maszyny" do współczesnego IoT <br/>
+                    - dlaczego IOT to przyszłość automatyzacji?<br/>
                 </ul>
                 <li>czujnik, sterownik, oraz "zarządca" jako podstawa każdego systemu IoT</li>
                 <ul>
-                    <li>implementacje czujników</li>
-                    <li>implementacje sterowników</li>
-                    <li>"zarządca" jako punt zbiorczy dla danych i decyzji</li>
-                    <li>jak komunikować ze sobą elementy</li>
-                    <li>przykład 1 : system do kontroli ogrzewania w budynku</li>
-                    <li>jak sprawić by system był rozszerzalny o nowe elementy?</li>
+                    - implementacje czujników <br/>
+                    - implementacje sterowników <br/>
+                    - "zarządca" jako punt zbiorczy dla danych i decyzji <br/>
+                    - jak komunikować ze sobą elementy <br/>
+                    - przykład 1 : system do kontroli ogrzewania w budynku <br/>
+                    - jak sprawić by system był rozszerzalny o nowe elementy? <br/>
                 </ul>
                 <li>sterowanie zdalne, rozszerzanie systemu, autonomia elementów IoT</li>
                 <ul>
-                    <li>typowe implementacje serwisów internetowych dla IoT</li>
-                    <li>autonomia składowych systemu</li>
-                    <li>przykład 2 : serwis http pozwalający na zarządzanie zdalne elementami z przykładu 1</li>
-                    <li>przykład 3 : rozszerzenie systemu o nowe nieplanowane możliwości (kontrola klimatyzacji)</li>
+                    - typowe implementacje serwisów internetowych dla IoT <br/>
+                    - autonomia składowych systemu <br/>
+                    - przykład 2 : serwis http pozwalający na zarządzanie zdalne elementami z przykładu 1 <br/>
+                    - przykład 3 : rozszerzenie systemu o nowe nieplanowane możliwości (kontrola klimatyzacji) <br/>
                 </ul>
                 <li>cięcie kosztów, ograniczania komunikacji, brak scentralizowanego źródła prawdy</li>
                 <ul>
-                    <li>problemy wynikające z rozproszenia systemu w przestrzeni</li>
-                    <li>problemy wynikające z ograniczonego pasma komunikacji</li>
-                    <li>problemy wynikające z używania różnorodnych urządzeń i technik</li>
-                    <li>typowe implementacje urządzeń pośrednich</li>
-                    <li>wykorzystanie telefonów komórkowych</li>
-                    <li>mikroserwisy</li>
-                    <li>przykład 4 : Sterowanie z systemu android</li>
-                    <li>przykład 5 : Sterowanie z urządzenia posiadającego wyświetlacz</li>
+                    - problemy wynikające z rozproszenia systemu w przestrzeni <br/>
+                    - problemy wynikające z ograniczonego pasma komunikacji <br/>
+                    - problemy wynikające z używania różnorodnych urządzeń i technik <br/>
+                    - typowe implementacje urządzeń pośrednich <br/>
+                    - wykorzystanie telefonów komórkowych <br/>
+                    - mikroserwisy <br/>
+                    - przykład 4 : Sterowanie z systemu android <br/>
+                    - przykład 5 : Sterowanie z urządzenia posiadającego wyświetlacz <br/>
                 </ul>
                 <li>chmura, rozwiązania nietypowe</li>
                 <ul>
-                    <li>przykłady istniejących gotowych rozwiązań dla branży IoT</li>
-                    <li>integracja z zewnętrznymi serwisami</li>
-                    <li>HA</li>
-                    <li>analiza big data</li>
-                    <li>więcej niż zwykłe aktualizacje (mechanizmy samouczące w branży robotycznej)</li>
-                    <li>przykłady rozwiązań nietypowych (samochody autonomiczne)</li>
+                    - przykłady istniejących gotowych rozwiązań dla branży IoT <br/>
+                    - integracja z zewnętrznymi serwisami <br/>
+                    - HA <br/>
+                    - analiza big data <br/>
+                    - więcej niż zwykłe aktualizacje (mechanizmy samouczące w branży robotycznej) <br/>
+                    - przykłady rozwiązań nietypowych (samochody autonomiczne) <br/>
                 </ul>
             </ul>
             <h3>Cena i zakres</h3>

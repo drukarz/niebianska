@@ -2,6 +2,16 @@ import React, {useState} from 'react'
 import {Card} from 'primereact/card';
 import {Dropdown} from 'primereact/dropdown';
 
+import ansibleLogo from '../assets/images/courses/ANSIBLE_logo.png'
+import dockerLogo from '../assets/images/courses/DOCKER_logo.png'
+import hapiLogo from '../assets/images/courses/HAPI_logo.png'
+import iotLogo from '../assets/images/courses/IOT_logo.png'
+import netLogo from '../assets/images/courses/NET_logo.png'
+import reactLogo from '../assets/images/courses/REACT_logo.png'
+import scrumLogo from '../assets/images/courses/SCRUM_logo.png'
+import springLogo from '../assets/images/courses/SPRING_logo.png'
+import {isMobile} from "react-device-detect";
+
 export default function Schedule(){
 
     const courses = [
@@ -9,47 +19,43 @@ export default function Schedule(){
         { name: 'Docker'},
         { name: 'Hapi JS'},
         { name: 'IoT'},
-        { name: '.Net'},
+        { name: '.Net mikroserwisy'},
         { name: 'React JS'},
         { name: 'Scrum'},
         { name: 'Spring mikroserwisy'}
     ];
 
     const coursesAndDates = [
-        { name: 'Ansible', date: 'xxxx-xx-xx'},
-        { name: 'Docker', date: 'xxxx-xx-xx'},
-        { name: 'Hapi JS', date: 'xxxx-xx-xx'},
-        { name: 'IoT', date: 'xxxx-xx-xx'},
-        { name: 'Ansible', date: 'xxxx-xx-xx'},
-        { name: 'Docker', date: 'xxxx-xx-xx'},
-        { name: '.Net', date: 'xxxx-xx-xx'},
-        { name: 'IoT', date: 'xxxx-xx-xx'}
+        { name: 'React JS', date: '7-9 Grudzień 2020', logo: reactLogo},
+        { name: 'Spring mikroserwisy', date: '14-16 Grudzień 2020', logo: springLogo}
     ]
 
     const [selectedCourse, setSelectedCourse] = useState('');
 
     return(
-        <div>
+        <div className={!isMobile ? "schedule" : "schedule-mobile"}>
             <br/>
-            <Dropdown value={selectedCourse} options={courses} onChange={(event) => {setSelectedCourse(event.value)}}
-                      optionLabel="name" placeholder="Znajdź kurs" style={{marginLeft: '2em', width: '25rem'}}/>
+            <Dropdown className={!isMobile ? "schedule-dropdown" : "schedule-dropdown-mobile"} value={selectedCourse} options={courses}
+                      onChange={(event) => {setSelectedCourse(event.value)}}
+                      optionLabel="name" placeholder="Znajdź kurs"/>
             <br/>
-            <div className="grid-container">
-                {  coursesAndDates.map((item, index) => {
-                    {
+
+                {coursesAndDates.map((item) => {
+
                        if(selectedCourse === '' || selectedCourse.name === item.name){
-                            return <Card title={item.name} style={{
-                                width: '25rem', marginBottom: '2em',
-                                marginTop: '2em', marginLeft: '2em'/*, gridColumn: gridColumn, gridRow: gridRow*/
-                            }}>
-                                <p className="p-m-0" style={{lineHeight: '1.5'}}>
-                                    data: {item.date}
-                                </p>
-                            </Card>
+                            return (<div>
+                                    <Card title={item.name} className={!isMobile ? "schedule-card" : "schedule-card-mobile"}>
+                                        <img src={item.logo} className="schedule-card-logo"/>
+                                        <p style={{lineHeight: '1.5'}}>
+                                            data: {item.date}
+                                        </p>
+                                    </Card>
+                                    <br/>
+                                    </div>)
                         }
-                    }
+
                 })}
-            </div>
+
         </div>
     );
 }

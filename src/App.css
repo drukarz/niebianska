@@ -15,13 +15,47 @@ img {
   height: 25%;
 }
 
-.about-text {
-  text-align: justify;
-  margin-left: 20%;
+.common-font-15 {
   font-family: 'Lato', sans-serif;
   font-weight: lighter;
   font-size: 15px;
   color: #081C3F;
+}
+
+.about-text {
+   text-align: justify;
+   margin-left: 20%;
+ }
+
+.about-text-mobile{
+  text-align: justify;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.offer-text{
+  column-count: 2;
+  column-gap: 100px;
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: justify;
+  height: 50%;
+}
+
+.offer-text-mobile{
+  text-align: justify;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.course{
+  margin-left: 20%;
+}
+
+.course-mobile{
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .page-header {
@@ -33,10 +67,7 @@ img {
 }
 
 .list-turn-to {
-  font-family: 'Lato', sans-serif;
   font-weight: bold;
-  font-size: 15px;
-  color: #081C3F;
 }
 
 ul {list-style: none}
@@ -53,11 +84,6 @@ li::before {content: "\2589     "; color: #38A5DE}
 .link-text:hover {
  color: #38A5DE;
 }
-.courses {
-  text-align: center;
-  margin-left: 20%;
-  margin-right: 20%;
-}
 
 .contact-background{
   background-color: #071e40;
@@ -71,7 +97,36 @@ li::before {content: "\2589     "; color: #38A5DE}
   height: 30%;
 }
 
-.grid-container {
-  display: grid;
+.schedule {
+  margin-left: 30%;
+  width: 40%;
+  height: 40%;
+}
+
+.schedule-mobile {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.schedule-card {
+  width: 500px;
   text-align: center;
+}
+
+.schedule-card-mobile {
+  width: 100%;
+  text-align: center;
+}
+
+.schedule-dropdown {
+  width: 500px;
+}
+
+.schedule-dropdown-mobile {
+  width: 100%;
+}
+
+.schedule-card-logo {
+  width: 20%;
+  height: 20%;
 }
