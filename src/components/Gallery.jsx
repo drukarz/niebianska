@@ -24,12 +24,12 @@ const Gallery = () => {
             {pageTitle}
             <br/>
             <div className={className}>
-                <b>NIEBIAŃSKA SZKOŁA PROGRAMISTÓW</b> mieści się w pencjonacie Bliżej Nieba
+                <b>NIEBIAŃSKA SZKOŁA PROGRAMISTÓW</b> mieści się w pensjonacie Bliżej Nieba
                 <br/>
-                w miejscowści Wola Skrzydlańska.
+                w miejscowości Wola Skrzydlańska.
                 <br/>
                 <br/>
-                Zupełnie niedaleko. Zalewnie kilka kwadransów od gwarnego i klimatycznego Krakowa,
+                Zupełnie niedaleko. Zaledwnie kilka kwadransów od gwarnego i klimatycznego Krakowa,
                 <br/>
                 gdzie można wstąpić na aromatyczną kawę.
                 <br/>
